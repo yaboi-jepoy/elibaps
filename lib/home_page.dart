@@ -21,6 +21,8 @@ class _MyWidgetState extends State<HomePage> {
     return Scaffold(
       // builds the appbar
       appBar: AppBar(
+        leading: IconButton(
+            icon: const Icon(Icons.add_card_outlined), onPressed: () {}),
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
         title: const Text(
@@ -29,6 +31,8 @@ class _MyWidgetState extends State<HomePage> {
         ),
         centerTitle: true,
       ),
+
+      // the button to add stocks
 
       // the body of the app
       // the main screen or something idk

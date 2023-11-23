@@ -48,46 +48,50 @@ class ItemTile extends StatelessWidget {
               SizedBox(
                 height: 100,
                 width: 175,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Stack(
                   children: [
-                    // NAME
-                    Text(
-                      itemName,
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-
-                    // for formatting purposes
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // NAME
+                        Text(
+                          itemName,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+
+                        // for formatting purposes
                         SizedBox(
                           // makes the price and count stacked
                           child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                // PRICE
-                                Text(
-                                  "₱$itemPrice/pc",
-                                  style: const TextStyle(
-                                    fontStyle: FontStyle.italic,
-                                    fontSize: 18,
-                                  ),
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // PRICE
+                              Text(
+                                "₱$itemPrice/pc",
+                                style: const TextStyle(
+                                  fontStyle: FontStyle.italic,
+                                  fontSize: 18,
                                 ),
+                              ),
 
-                                // COUNT
-                                Text('stock: $itemCount'),
-                              ]),
+                              // COUNT
+                              Text('stock: $itemCount'),
+                            ],
+                          ),
                         ),
-                        // ADD TO CART ICON
-                        SizedBox(
-                          child: Icon(Icons.add_shopping_cart_outlined),
-                        )
                       ],
-                    ),
+                    ), // ADD TO CART ICON
+                    Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.add_shopping_cart_outlined),
+                      ),
+                    )
                   ],
                 ),
               )

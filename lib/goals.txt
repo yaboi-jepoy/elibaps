@@ -1,5 +1,5 @@
 to do:
 
-- fix layout of price and add to cart
+✔️ fix layout of price and add to cart
 - create button that accepts 'onPressed'
     onPressed should be defined by the caller context
