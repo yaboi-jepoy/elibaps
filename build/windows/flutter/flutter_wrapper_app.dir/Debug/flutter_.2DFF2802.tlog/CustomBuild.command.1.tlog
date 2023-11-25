@@ -1,0 +1,10 @@
+^C:\USERS\PINKU\DOCUMENTS\COLLEGE FILES\PROGRAMMING LOGIC AND DESIGN\FINALS PROJECT\PABILI_APP\PABILI-APP\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/windows" "-BC:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/build/windows" --check-stamp-file "C:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/build/windows/flutter/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

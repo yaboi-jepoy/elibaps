@@ -56,9 +56,10 @@ class ItemTile extends StatelessWidget {
                         // NAME
                         Text(
                           itemName,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
+                            color: Colors.green.shade800,
                           ),
                         ),
 
@@ -71,14 +72,18 @@ class ItemTile extends StatelessWidget {
                               // PRICE
                               Text(
                                 "₱$itemPrice/pc",
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontStyle: FontStyle.italic,
                                   fontSize: 18,
+                                  color: Colors.green.shade800,
                                 ),
                               ),
 
                               // COUNT
-                              Text('stock: $itemCount'),
+                              Text(
+                                'stock: $itemCount',
+                                style: TextStyle(color: Colors.green.shade800),
+                              ),
                             ],
                           ),
                         ),

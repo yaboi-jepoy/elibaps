@@ -1,3 +1,4 @@
+import 'package:elibaps/components/new_item_dialog.dart';
 import 'package:flutter/material.dart';
 
 import 'components/item_tile.dart';
@@ -16,13 +17,27 @@ class _MyWidgetState extends State<HomePage> {
     ["hisab al jab'r wa'l mughabala", 499, 3],
   ];
 
+  // method to add new items
+  void AddNewItem() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return NewItemDialog();
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // builds the appbar
       appBar: AppBar(
         leading: IconButton(
-            icon: const Icon(Icons.add_card_outlined), onPressed: () {}),
+          icon: const Icon(Icons.add_card_outlined),
+          onPressed: () {
+            AddNewItem();
+          },
+        ),
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
         title: const Text(

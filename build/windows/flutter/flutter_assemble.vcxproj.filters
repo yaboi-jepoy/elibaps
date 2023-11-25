@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\pinku\Documents\College Files\Programming Logic and Design\FINALS PROJECT\pabili_app\Pabili-App\build\windows\CMakeFiles\247f6f5e15953e20297300500ac315b9\flutter_windows.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pinku\Documents\College Files\Programming Logic and Design\FINALS PROJECT\pabili_app\Pabili-App\build\windows\CMakeFiles\5ffaaa3ad2b6978b7d4231a4c88ab553\flutter_assemble.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pinku\Documents\College Files\Programming Logic and Design\FINALS PROJECT\pabili_app\Pabili-App\windows\flutter\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\pinku\Documents\College Files\Programming Logic and Design\FINALS PROJECT\pabili_app\Pabili-App\build\windows\flutter\CMakeFiles\flutter_assemble" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{5A1FCA31-6621-3381-A2BA-D5167897855F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

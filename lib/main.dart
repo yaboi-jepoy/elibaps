@@ -13,10 +13,10 @@ class Pabili extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       home: const HomePage(),
       theme: ThemeData(
-        primaryColor: Colors.green.shade400,
+        primaryColor: Colors.green.shade800,
       ),
     );
   }

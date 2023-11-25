@@ -1,0 +1,10 @@
+^C:\USERS\PINKU\DOCUMENTS\COLLEGE FILES\PROGRAMMING LOGIC AND DESIGN\FINALS PROJECT\PABILI_APP\PABILI-APP\BUILD\WINDOWS\CMAKEFILES\E0DA906F0E58E2BDF90507FB3EE58B42\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

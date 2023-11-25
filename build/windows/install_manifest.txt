@@ -1,0 +1,10 @@
+C:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/build/windows/runner/Debug/data/icudtl.dat
+C:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/build/windows/runner/Debug/flutter_windows.dll
+C:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/build/windows/runner/Debug/data/flutter_assets/AssetManifest.bin
+C:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+C:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/Users/pinku/Documents/College Files/Programming Logic and Design/FINALS PROJECT/pabili_app/Pabili-App/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag
