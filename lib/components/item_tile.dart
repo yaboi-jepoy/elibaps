@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers
 
+import 'package:elibaps/components/my_button.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -9,12 +10,15 @@ class ItemTile extends StatelessWidget {
   final String itemName;
   final num itemPrice;
   final int itemCount;
+  VoidCallback addToCart;
 
-  ItemTile(
-      {super.key,
-      required this.itemName,
-      required this.itemPrice,
-      required this.itemCount});
+  ItemTile({
+    super.key,
+    required this.itemName,
+    required this.itemPrice,
+    required this.itemCount,
+    required this.addToCart,
+  });
 
   // padding variables
   double tlrPadding = 20;
@@ -88,15 +92,17 @@ class ItemTile extends StatelessWidget {
                           ),
                         ),
                       ],
-                    ), // ADD TO CART ICON
+                    ),
+
+                    // ADD TO CART ICON
                     Positioned(
                       right: 0,
                       bottom: 0,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.add_shopping_cart_outlined),
+                      child: MyButton(
+                        onPressed: addToCart,
+                        label: "",
                       ),
-                    )
+                    ),
                   ],
                 ),
               )

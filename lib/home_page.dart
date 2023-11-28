@@ -11,18 +11,56 @@ class HomePage extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<HomePage> {
+  // text controllers
+  final _nameController = TextEditingController();
+  final _priceController = TextEditingController();
+  final _quantityController = TextEditingController();
+
   // list of item stocks
   List listStocks = [
     ["ecok omsim", 18, 10],
     ["hisab al jab'r wa'l mughabala", 499, 3],
   ];
 
+  // save new items
+  void saveNewItem() {
+    setState(() {
+      listStocks.add([
+        _nameController.text,
+        num.tryParse(_priceController.text),
+        int.tryParse(_quantityController.text),
+      ]);
+      clearController();
+      Navigator.of(context).pop();
+    });
+  }
+
+  // on add to cart functionality
+  void addToCart(int index) {
+    setState(() {
+      // code
+      if (listStocks[index][2] != 0) {
+        listStocks[index][2] -= 1;
+      }
+    });
+  }
+
+  // add to receipt function
+
   // method to add new items
-  void AddNewItem() {
+  void addNewItem() {
     showDialog(
       context: context,
       builder: (context) {
-        return NewItemDialog();
+        return NewItemDialog(
+            nameController: _nameController,
+            priceController: _priceController,
+            quantityController: _quantityController,
+            onSave: saveNewItem,
+            onCancel: () {
+              Navigator.of(context).pop();
+              clearController();
+            });
       },
     );
   }
@@ -35,7 +73,7 @@ class _MyWidgetState extends State<HomePage> {
         leading: IconButton(
           icon: const Icon(Icons.add_card_outlined),
           onPressed: () {
-            AddNewItem();
+            addNewItem();
           },
         ),
         elevation: 0,
@@ -47,8 +85,6 @@ class _MyWidgetState extends State<HomePage> {
         centerTitle: true,
       ),
 
-      // the button to add stocks
-
       // the body of the app
       // the main screen or something idk
       body: ListView.builder(
@@ -58,9 +94,16 @@ class _MyWidgetState extends State<HomePage> {
             itemName: listStocks[index][0],
             itemPrice: listStocks[index][1],
             itemCount: listStocks[index][2],
+            addToCart: () => addToCart(index),
           );
         },
       ),
     );
+  }
+
+  void clearController() {
+    _nameController.clear();
+    _priceController.clear();
+    _quantityController.clear();
   }
 }

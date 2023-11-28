@@ -1,5 +1,8 @@
 to do:
 
 ✔️ fix layout of price and add to cart
-- create button that accepts 'onPressed'
+✔️ create button that accepts 'onPressed'
     onPressed should be defined by the caller context
+-  create add_to_cart button and functionality
+    * modifies the quantity
+    * adds to total price

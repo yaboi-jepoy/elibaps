@@ -1,8 +1,23 @@
+// ignore_for_file: prefer_typing_uninitialized_variables, must_be_immutable
+
 import 'package:elibaps/components/my_button.dart';
 import 'package:flutter/material.dart';
 
 class NewItemDialog extends StatelessWidget {
-  const NewItemDialog({super.key});
+  final nameController;
+  final priceController;
+  final quantityController;
+  VoidCallback onSave;
+  VoidCallback onCancel;
+
+  NewItemDialog({
+    super.key,
+    required this.nameController,
+    required this.priceController,
+    required this.quantityController,
+    required this.onSave,
+    required this.onCancel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -10,13 +25,15 @@ class NewItemDialog extends StatelessWidget {
       backgroundColor: Colors.green.shade100,
       content: SizedBox(
         height: 250,
+        width: 250,
         child: Column(
           children: [
             // name input
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: TextField(
-                decoration: InputDecoration(
+                controller: nameController,
+                decoration: const InputDecoration(
                   hintText: "Name",
                   fillColor: Colors.white,
                   filled: true,
@@ -25,10 +42,11 @@ class NewItemDialog extends StatelessWidget {
             ),
 
             // price input
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: TextField(
-                decoration: InputDecoration(
+                controller: priceController,
+                decoration: const InputDecoration(
                   hintText: "Price",
                   fillColor: Colors.white,
                   filled: true,
@@ -37,10 +55,11 @@ class NewItemDialog extends StatelessWidget {
             ),
 
             // quantity input
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: TextField(
-                decoration: InputDecoration(
+                controller: quantityController,
+                decoration: const InputDecoration(
                   hintText: "Quantity",
                   fillColor: Colors.white,
                   filled: true,
@@ -53,15 +72,15 @@ class NewItemDialog extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   // save button
-                  myButton(
+                  MyButton(
                     label: "Save",
-                    onPressed: () {},
+                    onPressed: onSave,
                   ),
 
                   // cancel button
-                  myButton(
+                  MyButton(
                     label: "Cancel",
-                    onPressed: () {},
+                    onPressed: onCancel,
                   )
                 ],
               ),

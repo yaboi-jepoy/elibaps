@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class myButton extends StatelessWidget {
+// ignore: must_be_immutable
+class MyButton extends StatelessWidget {
   final String label;
   VoidCallback onPressed;
 
-  myButton({super.key, required this.label, required this.onPressed});
+  MyButton({super.key, required this.label, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
