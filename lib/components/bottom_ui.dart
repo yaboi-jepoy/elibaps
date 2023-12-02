@@ -38,7 +38,7 @@ class _BottomUIState extends State<BottomUI> {
             SizedBox(
               width: 200,
               child: Padding(
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.only(left: 30),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +62,7 @@ class _BottomUIState extends State<BottomUI> {
               ),
             ),
             SizedBox(
-              width: 170,
+              width: 150,
               child: Center(
                 child: MyButton(
                   label: "BUY",
