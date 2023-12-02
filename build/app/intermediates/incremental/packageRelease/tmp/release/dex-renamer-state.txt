@@ -1,0 +1,4 @@
+#Tue Nov 28 20:30:51 PST 2023
+base.0=C\:\\Users\\pinku\\Documents\\College Files\\Programming Logic and Design\\FINALS PROJECT\\pabili_app\\Pabili-App\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

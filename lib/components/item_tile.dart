@@ -100,7 +100,7 @@ class ItemTile extends StatelessWidget {
                       bottom: 0,
                       child: MyButton(
                         onPressed: addToCart,
-                        label: "",
+                        label: "ADD 1",
                       ),
                     ),
                   ],

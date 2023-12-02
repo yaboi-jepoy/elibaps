@@ -1,3 +1,4 @@
+import 'package:elibaps/components/bottom_ui.dart';
 import 'package:elibaps/components/new_item_dialog.dart';
 import 'package:flutter/material.dart';
 
@@ -16,10 +17,14 @@ class _MyWidgetState extends State<HomePage> {
   final _priceController = TextEditingController();
   final _quantityController = TextEditingController();
 
+  // cart variables
+  num cartTotal = 0;
+  num cartCount = 0;
+
   // list of item stocks
   List listStocks = [
-    ["ecok omsim", 18, 10],
-    ["hisab al jab'r wa'l mughabala", 499, 3],
+    ["ecok omsim", 18, 100],
+    ["hisab al jab'r wa'l mughabala", 499, 50],
   ];
 
   // save new items
@@ -41,6 +46,10 @@ class _MyWidgetState extends State<HomePage> {
       // code
       if (listStocks[index][2] != 0) {
         listStocks[index][2] -= 1;
+
+        // updates the cart value
+        cartCount += 1;
+        cartTotal += listStocks[index][1];
       }
     });
   }
@@ -97,6 +106,12 @@ class _MyWidgetState extends State<HomePage> {
             addToCart: () => addToCart(index),
           );
         },
+      ),
+
+      // the thing at the bottom
+      bottomNavigationBar: BottomUI(
+        itemText: cartCount,
+        priceText: cartTotal,
       ),
     );
   }
