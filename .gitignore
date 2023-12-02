@@ -1,2 +1,6 @@
+ .gitignore
 
-.dart_tool/flutter_build/4af8eee0307f743e71afeb32f4d2a554/.filecache
+# Ignore Makefiles
+Makefile
+*.mk
+.dart_tool/flutter_build/e7ac2e2d3e12552a2701c7659131f111/.filecache
