@@ -1,5 +1,6 @@
 import 'package:elibaps/components/bottom_ui.dart';
 import 'package:elibaps/components/new_item_dialog.dart';
+import 'package:elibaps/components/receipt.dart';
 import 'package:flutter/material.dart';
 
 import 'components/item_tile.dart';
@@ -54,7 +55,28 @@ class _MyWidgetState extends State<HomePage> {
     });
   }
 
-  // add to receipt function
+  // prints receipt
+  Future<void> printReceipt() async {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return ReceiptDialog(bought: cartCount, amount: cartTotal);
+        });
+
+    await Future.delayed(
+      const Duration(milliseconds: 100),
+    );
+
+    clearCart();
+  }
+
+  // clears cart
+  void clearCart() {
+    setState(() {
+      cartTotal = 0;
+      cartCount = 0;
+    });
+  }
 
   // method to add new items
   void addNewItem() {
@@ -112,6 +134,7 @@ class _MyWidgetState extends State<HomePage> {
       bottomNavigationBar: BottomUI(
         itemText: cartCount,
         priceText: cartTotal,
+        onPressed: printReceipt,
       ),
     );
   }

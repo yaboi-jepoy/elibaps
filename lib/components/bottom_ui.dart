@@ -4,9 +4,14 @@ import 'package:elibaps/components/my_button.dart';
 import 'package:flutter/material.dart';
 
 class BottomUI extends StatefulWidget {
-  num priceText;
+  VoidCallback onPressed;
   num itemText;
-  BottomUI({super.key, required this.itemText, required this.priceText});
+  num priceText;
+  BottomUI(
+      {super.key,
+      required this.itemText,
+      required this.priceText,
+      required this.onPressed});
 
   @override
   State<BottomUI> createState() => _BottomUIState();
@@ -59,7 +64,10 @@ class _BottomUIState extends State<BottomUI> {
             SizedBox(
               width: 170,
               child: Center(
-                child: MyButton(label: "BUY", onPressed: () {}),
+                child: MyButton(
+                  label: "BUY",
+                  onPressed: widget.onPressed,
+                ),
               ),
             ),
           ],
