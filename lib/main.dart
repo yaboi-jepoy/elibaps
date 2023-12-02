@@ -1,9 +1,19 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:elibaps/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
   debugPaintSizeEnabled = false;
+
+  // initialize hive
+  await Hive.initFlutter();
+
+  // open a box
+  var box = await Hive.openBox('myBox');
+
   runApp(const Pabili());
 }
 

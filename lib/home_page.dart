@@ -1,7 +1,11 @@
+// ignore_for_file: unused_field
+
 import 'package:elibaps/components/bottom_ui.dart';
 import 'package:elibaps/components/new_item_dialog.dart';
 import 'package:elibaps/components/receipt.dart';
+import 'package:elibaps/data/database.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import 'components/item_tile.dart';
 
@@ -13,6 +17,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<HomePage> {
+  // reference the hive box
+  StocksDatabase sb = StocksDatabase();
+  final _myBox = Hive.box('myBox');
+
+  @override
+  void initState() {
+    // if first time buksan
+    if (_myBox.get("STOCKS") == null) {
+      sb.createInitialData();
+    } else {
+      sb.loadData();
+    }
+    super.initState();
+  }
+
   // text controllers
   final _nameController = TextEditingController();
   final _priceController = TextEditingController();
@@ -22,16 +41,10 @@ class _MyWidgetState extends State<HomePage> {
   num cartTotal = 0;
   num cartCount = 0;
 
-  // list of item stocks
-  List listStocks = [
-    ["ecok omsim", 18, 100],
-    ["hisab al jab'r wa'l mughabala", 499, 50],
-  ];
-
   // save new items
   void saveNewItem() {
     setState(() {
-      listStocks.add([
+      sb.listStocks.add([
         _nameController.text,
         num.tryParse(_priceController.text),
         int.tryParse(_quantityController.text),
@@ -39,18 +52,20 @@ class _MyWidgetState extends State<HomePage> {
       clearController();
       Navigator.of(context).pop();
     });
+
+    sb.updateData();
   }
 
   // on add to cart functionality
   void addToCart(int index) {
     setState(() {
       // code
-      if (listStocks[index][2] != 0) {
-        listStocks[index][2] -= 1;
+      if (sb.listStocks[index][2] != 0) {
+        sb.listStocks[index][2] -= 1;
 
         // updates the cart value
         cartCount += 1;
-        cartTotal += listStocks[index][1];
+        cartTotal += sb.listStocks[index][1];
       }
     });
   }
@@ -67,6 +82,7 @@ class _MyWidgetState extends State<HomePage> {
       const Duration(milliseconds: 100),
     );
 
+    sb.updateData();
     clearCart();
   }
 
@@ -119,12 +135,12 @@ class _MyWidgetState extends State<HomePage> {
       // the body of the app
       // the main screen or something idk
       body: ListView.builder(
-        itemCount: listStocks.length,
+        itemCount: sb.listStocks.length,
         itemBuilder: (context, index) {
           return ItemTile(
-            itemName: listStocks[index][0],
-            itemPrice: listStocks[index][1],
-            itemCount: listStocks[index][2],
+            itemName: sb.listStocks[index][0],
+            itemPrice: sb.listStocks[index][1],
+            itemCount: sb.listStocks[index][2],
             addToCart: () => addToCart(index),
           );
         },
